@@ -310,6 +310,11 @@ func (r *Runner) Port() int {
 	return p
 }
 
+// DevToolURL return devtool url
+func (r *Runner) DevToolURL() string {
+	return fmt.Sprintf("http://localhost:%d", r.Port())
+}
+
 func (r *Runner) httpGet(ctx context.Context, path string) (*http.Response, error) {
 	if ctx == nil {
 		ctx = context.Background()
